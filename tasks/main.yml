@@ -1,2 +1,10 @@
 ---
 # tasks file for install_openscap
+- name: install packages
+  yum:
+    name:
+      - httpd
+      - openscap-scanner
+      - scap-security-guide
+  become: true
+  become_method: sudo
