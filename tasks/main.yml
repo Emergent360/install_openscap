@@ -49,7 +49,7 @@
 
 - name: get score
   set_fact:
-    scan_score: "{{ grep_output | regex_findall('\<.+\>') }}"
+    scan_score: "{{ grep_output | regex_findall('<(.+)>') }}"
 
 - debug:
     msg: "{{ scan_score }}"
