@@ -49,7 +49,7 @@
 
 - name: get score
   set_fact:
-    scan_score: "{{ grep_output.stdout | regex_replace('^<score.*>(.+)<.*score>$', '\\1') }}"
+    scan_score: "{{ grep_output.stdout | regex_replace('^.*?<score.*?>(.*)<.*$', '\\1') }}"
 
 - debug:
     msg: "{{ scan_score }}"
