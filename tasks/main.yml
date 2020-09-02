@@ -30,11 +30,11 @@
   xml:
     path: /tmp/arf.xml
     xpath: >
-      /arf:asset-report-collection 
-      /arf:reports 
-      /arf:report   
-      /arf:content 
-      /TestResult 
+#      /arf:asset-report-collection 
+#      /arf:reports 
+#      /arf:report   
+#      /arf:content 
+      //TestResult 
       /score
     content: text
     namespaces:
