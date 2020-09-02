@@ -24,3 +24,19 @@
   become: yes
   register: scan_result
   failed_when: scan_result.rc == 1
+  
+- name: read score
+  xml:
+    path: /tmp/arf.xml
+    xpath: /arf:asset-report-collection \
+      /arf:reports \
+      /arf:report \
+      /arf:content \
+      /TestResult \
+      /score
+    content: attribute
+  register: score
+
+- debug:
+    msg: "{{ score }}"
+    
