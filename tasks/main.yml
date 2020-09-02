@@ -35,7 +35,6 @@
       /arf:report 
       /arf:content 
       /TestResult 
-      /score
     content: text
     namespaces:
       arf: "http://scap.nist.gov/schema/asset-reporting-format/1.1"
