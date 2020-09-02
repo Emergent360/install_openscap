@@ -18,6 +18,12 @@
     zone: public
     state: enabled
 
+- name: reload firewalld
+  systemd:
+    state: reloaded
+    enabled: yes
+    name: firewalld
+
 - name: enable httpd
   systemd:
     state: started
