@@ -30,7 +30,7 @@
   xml:
     path: /tmp/arf.xml
     xpath: /arf:asset-report-collection
-    content: text
+    content: attribute
   register: score
 
 - debug:
