@@ -53,3 +53,7 @@
 
 - debug:
     msg: "{{ scan_score }}"
+
+- debug:
+    msg: "mitigate"
+  when: "{{ scan_score }}" <= 100
