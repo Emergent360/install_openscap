@@ -36,7 +36,7 @@
       /arf:content 
       /TestResult 
       /score
-    content: attribute
+    content: text
   register: score
 
 - debug:
