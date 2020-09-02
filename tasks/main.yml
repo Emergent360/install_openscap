@@ -17,18 +17,24 @@
     permanent: yes
     zone: public
     state: enabled
+  become: true
+  become_method: sudo
 
 - name: reload firewalld
   systemd:
     state: reloaded
     enabled: yes
     name: firewalld
+  become: true
+  become_method: sudo
 
 - name: enable httpd
   systemd:
     state: started
     enabled: yes
     name: httpd
+  become: true
+  become_method: sudo
 
 - name: run openscap scan
   command: oscap xccdf eval \
