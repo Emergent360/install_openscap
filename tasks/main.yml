@@ -29,7 +29,9 @@
 - name: read score
   xml:
     path: /tmp/arf.xml
-    xpath: "/arf:asset-report-collection"
+    xpath: >
+      /arf:asset-report-collection 
+      /arf:reports
     content: text
     namespaces:
       arf: "http://scap.nist.gov/schema/asset-reporting-format/1.1"
