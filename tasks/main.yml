@@ -56,4 +56,4 @@
 
 - debug:
     msg: "mitigate"
-  when: "{{ scan_score }}" <= 100
+  when: scan_score.value < 100
