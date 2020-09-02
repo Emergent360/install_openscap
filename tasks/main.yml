@@ -22,3 +22,5 @@
     --report /var/www/html/report.html \
     /usr/share/xml/scap/ssg/content/ssg-rhel8-ds.xml
   become: yes
+  register: scan_result
+  failed_when: scan_result.rc == 2
