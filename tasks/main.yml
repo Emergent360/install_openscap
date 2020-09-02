@@ -78,7 +78,7 @@
       register: snow_var
       delegate_to: localhost
 
-#    - name: DEBUG SNOW_VAR
-#      debug:
-#        var: snow_var.record.number
-  when: mitigate|bool
+    - name: DEBUG SNOW_VAR
+      debug:
+        var: snow_var.record.number
+#  when: mitigate|bool
