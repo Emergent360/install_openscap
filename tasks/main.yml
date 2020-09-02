@@ -3,6 +3,7 @@
 - name: install packages
   yum:
     name:
+      - firewalld
       - httpd
       - openscap-scanner
       - scap-security-guide
@@ -10,39 +11,29 @@
   become: true
   become_method: sudo
 
+- name: 
+  firewalld:
+    service: httpd
+    permanent: yes
+    zone: public
+    state: enabled
+    
 - name: enable httpd
   systemd:
     state: started
     enabled: yes
     name: httpd
 
-#- name: run openscap scan
-#  command: oscap xccdf eval \
-#    --fetch-remote-resources 
-    #--profile xccdf_org.ssgproject.content_profile_ospp \ --results-arf /tmp/arf.xml \
-#    --report /var/www/html/report.html \
-#    /usr/share/xml/scap/ssg/content/ssg-rhel8-ds.xml
-#  become: yes
-#  register: scan_result
-#  failed_when: scan_result.rc == 1
+- name: run openscap scan
+  command: oscap xccdf eval \
+    --fetch-remote-resources 
+    --profile xccdf_org.ssgproject.content_profile_ospp \ -results-arf /tmp/arf.xml \
+    --report /var/www/html/report.html \
+    /usr/share/xml/scap/ssg/content/ssg-rhel8-ds.xml
+  become: yes
+  register: scan_result
+  failed_when: scan_result.rc == 1
   
-#- name: read score
-#  xml:
-#    path: /tmp/arf.xml
-#    xpath: >
-#      /arf:asset-report-collection 
-#      /arf:reports 
-#      /arf:report   
-#      /arf:content 
-#    attribute: TestResult
-#    content: text
-#    namespaces:
-#      arf: http://scap.nist.gov/schema/asset-reporting-format/1.1
-#  register: score
-
-#- debug:
-#    msg: "{{ score }}"
-
 - name: grep arf.xml
   command: /usr/bin/egrep '<score' /tmp/arf.xml
   register: grep_output
