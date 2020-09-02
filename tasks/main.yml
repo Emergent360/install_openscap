@@ -56,4 +56,4 @@
 
 - debug:
     msg: "mitigate"
-  when: scan_score <= scan_threshold
+  when: scan_score | float <= scan_threshold | float
