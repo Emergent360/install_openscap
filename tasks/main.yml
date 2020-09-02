@@ -29,7 +29,7 @@
 - name: read score
   xml:
     path: /tmp/arf.xml
-    xpath: /arf:asset-report-collection
+    xpath: /"arf:asset-report-collection"
     content: attribute
   register: score
 
