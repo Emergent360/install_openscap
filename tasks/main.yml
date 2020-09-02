@@ -81,4 +81,4 @@
     - name: DEBUG SNOW_VAR
       debug:
         var: snow_var.record.number
-#  when: mitigate|bool
+  when: mitigate|bool
