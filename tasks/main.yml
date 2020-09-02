@@ -34,6 +34,7 @@
       /arf:reports 
       /arf:report   
       /arf:content 
+      /TestResult 
       /score
     content: text
     namespaces:
