@@ -34,11 +34,10 @@
       /arf:reports 
       /arf:report   
       /arf:content 
-      /a:TestResults
+      /score
     content: text
     namespaces:
       arf: http://scap.nist.gov/schema/asset-reporting-format/1.1
-      a: http://checklists.nist.gov/xccdf/1.2
   register: score
 
 - debug:
