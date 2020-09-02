@@ -26,22 +26,22 @@
 #  register: scan_result
 #  failed_when: scan_result.rc == 1
   
-- name: read score
-  xml:
-    path: /tmp/arf.xml
-    xpath: >
-      /arf:asset-report-collection 
-      /arf:reports 
-      /arf:report   
-      /arf:content 
-    attribute: TestResult
-    content: text
-    namespaces:
-      arf: http://scap.nist.gov/schema/asset-reporting-format/1.1
-  register: score
+#- name: read score
+#  xml:
+#    path: /tmp/arf.xml
+#    xpath: >
+#      /arf:asset-report-collection 
+#      /arf:reports 
+#      /arf:report   
+#      /arf:content 
+#    attribute: TestResult
+#    content: text
+#    namespaces:
+#      arf: http://scap.nist.gov/schema/asset-reporting-format/1.1
+#  register: score
 
-- debug:
-    msg: "{{ score }}"
+#- debug:
+#    msg: "{{ score }}"
 
 - name: grep arf.xml
   command: /usr/bin/egrep '<score' /tmp/arf.xml
