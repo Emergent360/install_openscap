@@ -8,3 +8,9 @@
       - scap-security-guide
   become: true
   become_method: sudo
+
+- name: enable httpd
+  systemd:
+    state: started
+    enabled: yes
+    name: httpd
