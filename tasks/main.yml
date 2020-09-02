@@ -42,3 +42,14 @@
 
 - debug:
     msg: "{{ score }}"
+
+- name: grep arf.xml
+  command: /usr/bin/egrep '<score' /tmp/arf.xml
+  register: grep_output
+
+- name: get score
+    set_fact:
+      scan_score: "{{ grep_output | regex_findall('\<.+\>') }}"
+
+- debug:
+    msg: "{{ scan_score }}"
