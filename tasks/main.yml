@@ -34,10 +34,10 @@
       /arf:reports 
       /arf:report   
       /arf:content
-    content: text
+    content: attribute
     namespaces:
       arf: http://scap.nist.gov/schema/asset-reporting-format/1.1
   register: score
 
 - debug:
-    msg: "{{ score.matches }}"
+    msg: "{{ score }}"
