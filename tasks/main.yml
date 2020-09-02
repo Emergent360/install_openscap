@@ -36,7 +36,7 @@
       /arf:content
     content: text
     namespaces:
-      arf: "http://scap.nist.gov/schema/asset-reporting-format/1.1"
+      arf: http://scap.nist.gov/schema/asset-reporting-format/1.1
   register: score
 
 - debug:
