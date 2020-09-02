@@ -32,7 +32,7 @@
     xpath: >
       /arf:asset-report-collection 
       /arf:reports 
-      /arf:report id="xccdf1"  
+      /arf:report   
       /arf:content
     content: text
     namespaces:
@@ -40,4 +40,4 @@
   register: score
 
 - debug:
-    msg: "{{ score }}"
+    msg: "{{ score.matches }}"
