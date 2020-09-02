@@ -23,4 +23,4 @@
     /usr/share/xml/scap/ssg/content/ssg-rhel8-ds.xml
   become: yes
   register: scan_result
-  failed_when: scan_result.rc == 2
+  failed_when: scan_result.rc == 1
