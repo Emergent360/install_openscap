@@ -30,13 +30,11 @@
   xml:
     path: /tmp/arf.xml
     xpath: >
-#      /arf:asset-report-collection 
-#      /arf:reports 
-#      /arf:report   
-#      /arf:content 
-      //TestResult 
-      /score
-    content: text
+      /arf:asset-report-collection 
+      /arf:reports 
+      /arf:report   
+      /arf:content 
+    Attribute: TestResult
     namespaces:
       arf: http://scap.nist.gov/schema/asset-reporting-format/1.1
   register: score
