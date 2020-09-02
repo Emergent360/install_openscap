@@ -33,7 +33,8 @@
       /arf:asset-report-collection 
       /arf:reports 
       /arf:report   
-      /arf:content
+      /arf:content 
+      /TestResult
     content: text
     namespaces:
       arf: http://scap.nist.gov/schema/asset-reporting-format/1.1
