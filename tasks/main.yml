@@ -13,11 +13,11 @@
 
 - name: 
   firewalld:
-    service: httpd
+    service: http
     permanent: yes
     zone: public
     state: enabled
-    
+
 - name: enable httpd
   systemd:
     state: started
