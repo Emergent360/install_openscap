@@ -32,7 +32,7 @@
     xpath: >
       /arf:asset-report-collection 
       /arf:reports 
-      /arf:report 
+      /arf:report id="xccdf1"  
       /arf:content
     content: text
     namespaces:
