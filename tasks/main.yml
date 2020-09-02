@@ -6,6 +6,7 @@
       - httpd
       - openscap-scanner
       - scap-security-guide
+      - python3-lxml
   become: true
   become_method: sudo
 
@@ -39,4 +40,3 @@
 
 - debug:
     msg: "{{ score }}"
-    
